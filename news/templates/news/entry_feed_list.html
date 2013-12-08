@@ -1,0 +1,8 @@
+{% extends "news/entry_list.html" %}
+
+{% block title %}{{ feed.title }}: {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h1>{{ feed.title }}</h1>
+    {{ block.super }}
+{% endblock %}

@@ -3,8 +3,14 @@
 {% block title %}Список всех новостей{% endblock %}
 
 {% block content %}
-{% for entry in object_list %}
-    <a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a>
-{% endfor %}
-
+    <ul>
+        {% for entry in object_list %}
+            <li>
+                <a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a>
+                {% if entry.feed %}
+                    (<a href="{% url 'entry_feed_list' entry.feed.pk %}">{{ entry.feed }}</a>)
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
