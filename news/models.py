@@ -25,7 +25,7 @@ class Entry(models.Model):
     picture = models.URLField(verbose_name=u'Картинка')
     summary = models.TextField(verbose_name=u'Содержимое')
     published = models.DateTimeField(verbose_name=u'Дата публикации')
-    feed = models.ForeignKey('Feed')
+    feed = models.ForeignKey('Feed', null=True)
 
     def __unicode__(self):
         return self.title
