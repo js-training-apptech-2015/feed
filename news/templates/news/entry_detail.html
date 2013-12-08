@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+    {% if object.picture %}
+    <img src="{{ object.picture }}" alt="{{ object.title }}"/>
+    <hr/>
+{% endif %}
+{{ object.summary }}
+
+    <a href="{% url 'entry_list' %}">Все новости</a>
+{% endblock %}
